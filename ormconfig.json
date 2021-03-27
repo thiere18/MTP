@@ -3,8 +3,8 @@
   "host": "localhost",
   "port": "3306",
   "username": "root",
-  "password": "faztpassword",
-  "database": "test",
+  "password": "root",
+  "database": "mtp",
   "entities": ["dist/entity/**/*.js"],
   "logging": false,
   "synchronize": true
