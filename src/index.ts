@@ -5,7 +5,7 @@ import { createConnection, getRepository } from 'typeorm'
 
 
 import userRoutes from './routes/user.routes'
-import { Bootstrap } from './bootstrap';
+
 
 const app = express();
 createConnection().then(async (connection) => {

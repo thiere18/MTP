@@ -6,6 +6,7 @@
   "password": "root",
   "database": "mtp",
   "entities": ["dist/entity/**/*.js"],
+  "migrations":["src/migration/**/*.ts"],
   "logging": false,
   "synchronize": true
 }

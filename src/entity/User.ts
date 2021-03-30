@@ -5,9 +5,12 @@ import Model from './Model';
 export class User extends Model{
 
   @Column()
-  firstname: string;
+  username: string;
 
   @Column()
-  lastname: string;
+  email: string;
+  @Column()
+  password: string;
+
   
 }
