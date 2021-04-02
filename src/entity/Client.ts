@@ -1,4 +1,5 @@
-import {Entity, Column, } from 'typeorm'
+import {Entity, Column, OneToMany, } from 'typeorm'
+import { Dette } from './Dette';
 import Model from './Model';
     enum type_client {
     gerant = "gerant",
@@ -13,5 +14,6 @@ export class Client extends Model {
     @Column()
     phone: string
         
-    
+    @OneToMany(() => Dette, dette => dette.client)
+    dette: Dette[];
 }

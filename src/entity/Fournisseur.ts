@@ -1,4 +1,5 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
+import { Dette } from "./Dette";
 import Model from "./Model";
 enum type_fournisseur{
     locale = "locale",
@@ -11,4 +12,7 @@ export class Fournisseur extends Model{
     name: string
     @Column()
     type_fournisseur: type_fournisseur
+
+    @OneToMany(() => Dette, dette => dette.fournisseur)
+    dettes: Dette[];
 }

@@ -7,11 +7,14 @@ export class Magasin extends Model {
     @Column()
     name: string
  
-//     @OneToMany(() => Caisse, caisse => caisse.magasin)
-//     caisse: Caisse[];
+    @OneToMany(() => Caisse, caisse => caisse.magasin)
+    caisse: Caisse[];
         
 //     @OneToMany(() => Art_Magasin, art_magasin => art_magasin.d)
 // public art_magasins!: Art_Magasin[];
+
+@OneToMany(() => Art_Magasin, art_magasin => art_magasin.magasin)
+public art_magasins!: Art_Magasin[];
 
     
 }

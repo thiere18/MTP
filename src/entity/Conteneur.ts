@@ -1,5 +1,5 @@
 import {Entity, Column, OneToMany, } from 'typeorm'
-import { Art_conteneur } from './Art_conteneur';
+import { Article } from './Article';
 import Model from './Model';
 @Entity('conteneur')
 export class Conteneur extends Model {
@@ -9,4 +9,6 @@ export class Conteneur extends Model {
     
 //     @OneToMany(() => Art_conteneur, art_conteneur => art_conteneur.conteneur)
 // public art_conteneurs!:Art_conteneur[];
+@OneToMany(() => Article, article => article.conteneur)
+articles: Article[];
 }

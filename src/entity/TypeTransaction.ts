@@ -13,6 +13,6 @@ export class TypeTransaction extends Model {
     name: string
     @Column()
     flux: flux 
-    // @OneToMany(() => Transaction, transaction => transaction.type)
-    // transaction: Transaction[];
+    @OneToMany(() => Transaction, transaction => transaction.type)
+    transaction: Transaction[];
 }

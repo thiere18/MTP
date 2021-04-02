@@ -6,6 +6,6 @@ export class Caisse extends Model {
     @Column()
     name: string
   
-    // @ManyToOne(() => Magasin, magasin => magasin.caisse)
-    // magasin: Magasin;
+    @ManyToOne(() => Magasin, magasin => magasin.caisse)
+    magasin: Magasin;
 }

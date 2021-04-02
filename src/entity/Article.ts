@@ -1,9 +1,11 @@
-import {Entity, Column, } from 'typeorm'
+import {Entity, Column, ManyToOne, OneToMany, } from 'typeorm'
 import { ArticleGenerique } from './ArticleGenerique';
+import { Art_depot } from './Art_depot';
+import { Art_Facturation } from './Art_Facturation';
+import { Art_Magasin } from './Art_Magasin';
+import { Conteneur } from './Conteneur';
 @Entity('article')
 export class Article extends ArticleGenerique{
-    @Column()
-    name: string
     @Column()
     prix_achat: number
     @Column()
@@ -19,5 +21,17 @@ export class Article extends ArticleGenerique{
     @Column()
     quantity: number
 
-    
+    @ManyToOne(() => Conteneur, conteneur => conteneur.articles)
+    conteneur: Conteneur;
+
+    @OneToMany(() => Art_depot, art_depot => art_depot.article)
+public art_depots!: Art_depot[];
+
+@OneToMany(() => Art_Magasin, art_magasin => art_magasin.article)
+public art_magasins!: Art_Magasin[];
+
+@OneToMany(() => Art_Facturation, art_facturation => art_facturation.article)
+public art_facturations!: Art_Facturation[];
+
+
 }
