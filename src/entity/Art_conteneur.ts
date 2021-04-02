@@ -8,10 +8,10 @@ export class Art_conteneur extends Model {
 prix_achat: number
     @Column()
     product: string
-    @ManyToOne(() => Conteneur, conteneur => conteneur.art_conteneurs)
-    public conteneur!: Conteneur;
+    // @ManyToOne(() => Conteneur, conteneur => conteneur.art_conteneurs)
+    // public conteneur!: Conteneur;
 
-    @ManyToOne(() => ArticleGenerique, articleGenerique => articleGenerique.art_conteneurs)
-    public articleGenerique!: ArticleGenerique;
+    // @ManyToOne(() => ArticleGenerique, articleGenerique => articleGenerique.art_conteneurs)
+    // public articleGenerique!: ArticleGenerique;
 }
 

@@ -1,6 +1,6 @@
 import {Entity, Column, } from 'typeorm'
 import Model from './Model';
-@Entity('compte')
+@Entity('compteBancaire')
 export class CompteBancaire extends Model {
     @Column()
     name: string

@@ -7,6 +7,6 @@ export class Conteneur extends Model {
     @Column()
     prix_achat:number
     
-    @OneToMany(() => Art_conteneur, art_conteneur => art_conteneur.conteneur)
-public art_conteneurs!:Art_conteneur[];
+//     @OneToMany(() => Art_conteneur, art_conteneur => art_conteneur.conteneur)
+// public art_conteneurs!:Art_conteneur[];
 }

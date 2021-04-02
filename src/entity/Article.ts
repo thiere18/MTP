@@ -16,6 +16,8 @@ export class Article extends ArticleGenerique{
     prix_gros: number
     @Column()
     prix_client: number
+    @Column()
+    quantity: number
 
     
 }

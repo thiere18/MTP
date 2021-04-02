@@ -6,7 +6,7 @@ export class Category extends Model {
     @Column()
     name: string
   
-    @OneToMany(() => ArticleGenerique, articleGenerique => articleGenerique.category)
-    articleGenerique: ArticleGenerique[];
+    // @OneToMany(() => ArticleGenerique, articleGenerique => articleGenerique.category)
+    // articleGenerique: ArticleGenerique[];
 
 }
