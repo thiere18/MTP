@@ -5,7 +5,7 @@ services:
     mtp:
         build:
             context: .
-        command: npm run dev 
+        command: yarn run dev 
 
         ports:
           - "5000:5000"
@@ -13,8 +13,8 @@ services:
             - .:/home/node/mtp
             - node_modules:/home/node/mtp/node_modules
         depends_on:
-            - mysqlmtp
-    mysqlmtp:
+            - mtpdb
+    mtpdb:
         image: mysql
         cap_add:
             - SYS_NICE  # CAP_SYS_NICE
@@ -25,7 +25,7 @@ services:
         volumes:
             - mysql_data:/data/db
         ports:
-          - "3306:3306"
+          - "3310:3310"
           
 volumes:
     node_modules:

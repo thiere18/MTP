@@ -1,4 +1,4 @@
-FROM node:15.3.0
+FROM node:15.9.0
 
 # Create app directory
 RUN mkdir -p /home/node/mtp/node_modules && chown -R node:node /home/node/mtp
@@ -11,7 +11,7 @@ USER node
 
 # install dependencies
 COPY --chown=node:node package*.json ./
-RUN npm install && npm cache clean --force
+RUN yarn && yarn cache clean --force
 
 ENV PATH=/home/node/mtp/node_modules/.bin:$PATH
 
@@ -19,6 +19,6 @@ ENV PATH=/home/node/mtp/node_modules/.bin:$PATH
 COPY --chown=node:node . .
 
 #Expose port and start application
-EXPOSE 5300
+EXPOSE 5000
 
-CMD [ "node", "./bin/www"]
+CMD [ "yarn", "run", "dev"]
