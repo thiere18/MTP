@@ -1,17 +1,18 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors'
-import { createConnection, getRepository } from 'typeorm'
+import dotenv from 'dotenv';
+
+import { createConnection } from 'typeorm'
 
 
-import userRoutes from './routes/user.routes'
+import depotRoutes from './routes/depot.routes'
 
 
 const app = express();
 createConnection().then(async (connection) => {
     console.log("connection established with MYSQL")
-
-//  await Bootstrap()
+    dotenv.config({ path: './.env' })
 }).catch((error) => {
     console.error(error)
 });
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // routes
-app.use(userRoutes);
+app.use(depotRoutes);
 
 app.listen(5000);
-console.log('Server on ports', 5000);
+console.log(`Listening on port ${process.env.PORT}`);
