@@ -1,6 +1,5 @@
 import { Router } from "express";
 const router = Router();
-import {Request, Response} from 'express'
 
 import {
   getDepot,
@@ -10,10 +9,10 @@ import {
   deleteDepot
 } from "../controllers/Depot/depot.controller";
 
-router.get("/depots", getDepots);
-router.get("/depots/:id", getDepot);
-router.post("/depots", createDepot);
-router.put("/depots/:id", updateDepot);
-router.delete("/depots/:id", deleteDepot);
+router.get("/depot", getDepots);
+router.get("/depot/:id", getDepot);
+router.post("/depot", createDepot);
+router.put("/depot/:id", updateDepot);
+router.delete("/depot/:id", deleteDepot);
 
 export default router;
