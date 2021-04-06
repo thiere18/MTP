@@ -7,7 +7,7 @@ import {
   createUser,
   updateUser,
   deleteUser
-} from "../controllers/user.controller";
+} from "../controllers/auth/user.controller";
 
 router.get("/users", getUsers);
 router.get("/users/:id", getUser);
