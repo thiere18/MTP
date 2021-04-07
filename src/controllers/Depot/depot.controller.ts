@@ -1,7 +1,6 @@
-import { Depot } from '../../entity/Depot';
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
-
+import {Depot} from "../../entity/Depot"
 // 
 export const createDepot = async (
     req: Request,
