@@ -9,6 +9,18 @@ import {
   deleteDepot
 } from "../controllers/Depot/depot.controller";
 
+
+
+/**
+ * @swagger
+ * /:
+ *    get:
+ *      description: This should return ok
+ */
+
+router.get("/", (req, res) => {
+    res.send("bonjour")
+})
 router.get("/depot", getDepots);
 router.get("/depot/:id", getDepot);
 router.post("/depot", createDepot);

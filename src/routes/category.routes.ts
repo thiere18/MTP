@@ -9,7 +9,11 @@ import {
   deleteCategory
 } from "../controllers/Category/category.controller";
 
+
+
+
 router.get("/category", getCategories);
+
 router.get("/category/:id", getCategory);
 router.post("/category", createCategory);
 router.put("/category/:id", updateCategory);
