@@ -113,7 +113,7 @@ router.post("/category", createCategory);
  *    parameters:
  *      - in: path
  *        name: id
- *        schema:
+ *        schema: 
  *          type: string
  *        required: true
  *        description: The categry id
