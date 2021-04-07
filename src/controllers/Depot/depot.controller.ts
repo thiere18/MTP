@@ -25,7 +25,8 @@ export const createDepot = async (
     res: Response
   ): Promise<Response> => {
     const results = await getRepository(Depot).findOne(req.params.id);
-    return res.json(results);
+    return res.status(200).json(results);
+  
   };
   
 
@@ -37,7 +38,7 @@ export const createDepot = async (
     if (depot) {
       getRepository(Depot).merge(depot, req.body);
       const results = await getRepository(Depot).save(depot);
-      return res.json(results);
+      return res.status(200).json(results);
     }
   
     return res.json({msg: 'Not user found'});
