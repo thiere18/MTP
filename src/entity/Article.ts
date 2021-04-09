@@ -3,6 +3,7 @@ import { ArticleGenerique } from './ArticleGenerique';
 import { Art_depot } from './Art_depot';
 import { Art_Facturation } from './Art_Facturation';
 import { Art_Magasin } from './Art_Magasin';
+import { Category } from './Category';
 import { Conteneur } from './Conteneur';
 @Entity('article')
 export class Article extends ArticleGenerique{
@@ -19,11 +20,15 @@ export class Article extends ArticleGenerique{
     @Column()
     prix_client: number
     @Column()
-    quantity: number
+    quantity_init: number
+    @Column()
+    quantity_left: number
 
     @ManyToOne(() => Conteneur, conteneur => conteneur.articles)
     conteneur: Conteneur;
 
+    @ManyToOne(() => Category, category => category.article)
+    category: Category;
     @OneToMany(() => Art_depot, art_depot => art_depot.article)
 public art_depots!: Art_depot[];
 

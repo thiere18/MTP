@@ -6,8 +6,7 @@ import { Art_Magasin } from './Art_Magasin';
 export class ArticleGenerique extends Model {
     @Column()
     name: string
-    @ManyToOne(() => Category, category => category.articleGenerique)
-    category: Category;
+
     // @OneToMany(() => Art_conteneur, art_conteneur => art_conteneur.articleGenerique)
     // public art_conteneurs!: Art_conteneur[];
     // @OneToMany(() => Art_Depot, art_depot => art_depot.articleGenerique)
