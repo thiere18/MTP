@@ -7,10 +7,10 @@ import swaggerUi from 'swagger-ui-express'
 import swaggerJsDoc from 'swagger-jsdoc'
 import depotRoutes from './routes/depot.routes'
 import categoryRoutes from './routes/category.routes'
-
+import articleRoutes from './routes/article.routes'
 const options = {
     definition: {
-      openapi: "3.0.0",
+      openapi: "3.0.3",
       info: {
         title: "MTP API",
         version: "1.0.0",
@@ -44,6 +44,7 @@ app.use(morgan('dev'));
 // routes
 app.use(depotRoutes);
 app.use(categoryRoutes)
+app.use(articleRoutes)
 
 app.listen(4000);
 console.log(`Listening on port ${process.env.PORT}`);
