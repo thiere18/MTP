@@ -7,7 +7,7 @@ import {
   createArticle,
   updateArticle,
   deleteArticle,
-  searchArticle
+//   searchArticle
 } from "../controllers/Article/article.controller";
 
 
@@ -168,7 +168,7 @@ router.post("/article", createArticle);
  *       404:
  *         description: The article was not found
  */
-router.post("/article/search",searchArticle);
+// router.post("/article/search",searchArticle);
 
 /**
  * @swagger

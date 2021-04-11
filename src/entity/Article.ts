@@ -20,9 +20,11 @@ export class Article extends ArticleGenerique{
     @Column()
     prix_client: number
     @Column()
-    quantity_init: number
+    quantity_per_carton: number
     @Column()
     quantity_left: number
+    @Column()
+    quantity_init: number
 
     @ManyToOne(() => Conteneur, conteneur => conteneur.articles)
     conteneur: Conteneur;
