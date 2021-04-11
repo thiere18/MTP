@@ -75,23 +75,23 @@ try {
   };
 
 //
-export const searchArticle = async(
-    req: Request,
-    res: Response
-) => {
-    try {
+// export const searchArticle = async(
+//     req: Request,
+//     res: Response
+// ) => {
+//     try {
         
-    const article=await getRepository(Article).find({
-        name: Like(`%${req.query.q}%`)
-    });
-        if(article.length>0)
-            return res.status(200).json(article)
-        console.log(req.params.q)
-        return res.status(201).json({msg:"pas de resultats"});
-} catch (error) {
-    console.log(error);
-    return res.status(500).json(error);
-}
+//     const article=await getRepository(Article).find({
+//         name: Like(`%$%`)
+//     });
+//         if(article.length>0)
+//             return res.status(200).json(article)
+//         console.log(req.params.q)
+//         return res.status(201).json({msg:"pas de resultats"});
+// } catch (error) {
+//     console.log(error);
+//     return res.status(500).json(error);
+// }
 
 
-  }
+  
