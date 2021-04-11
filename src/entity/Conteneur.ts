@@ -5,7 +5,7 @@ import Model from './Model';
 export class Conteneur extends Model {
 
     @Column()
-    ID: string
+    ref: string
     @Column()
     prix_achat: number
     @Column()
