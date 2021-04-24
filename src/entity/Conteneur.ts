@@ -5,8 +5,6 @@ import Model from './Model';
 export class Conteneur extends Model {
 
     @Column()
-    ref: string
-    @Column()
     prix_achat: number
     @Column()
     prix_transport: number

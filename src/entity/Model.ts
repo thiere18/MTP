@@ -9,6 +9,8 @@ export default abstract class Model extends BaseEntity {
     createdAt: Date
     @UpdateDateColumn()
     updatedAt: Date
+    @Column()
+        isDeleted: boolean
     @BeforeInsert()
     createUuid() {
         this.uuid =uuid()
