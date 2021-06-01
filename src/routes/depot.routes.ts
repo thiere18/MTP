@@ -160,6 +160,6 @@ router.put("/depot/:id", updateDepot);
  *       404:
  *         description: The depot was not found
  */
-router.delete("/depot/:id", deleteDepot);
+router.put("/depot/:id", deleteDepot);
 
 export default router;

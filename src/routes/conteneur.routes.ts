@@ -2,29 +2,29 @@ import { Router } from "express";
 const router = Router();
 
 import {
-  getCategory,
-  getCategories,
-  createCategory,
-  updateCategory,
-  deleteCategory
-} from "../controllers/Category/category.controller";
+  getConteneur,
+  getConteneurs,
+  createConteneur,
+  updateConteneur,
+  deleteConteneur
+} from "../controllers/Conteneur/conteneur.controller";
 
 
 /**
  * @swagger
  * components:
  *   schemas:
- *     Category:
+ *     Conteneur:
  *       type: object
  *       required:
  *         - name
  *       properties:
  *         uuid:
  *           type: string
- *           description: The auto-generated uuid of the category
+ *           description: The auto-generated uuid of the conteneur
  *         name:
  *           type: string
- *           description: The category name
+ *           description: The conteneur name
  *       example:
  *         uuid: 4
  *         name: papier
@@ -34,82 +34,82 @@ import {
 /**
   * @swagger
   * tags:
-  *   name: Category 
-  *   description:  Category managing API
+  *   name: Conteneur 
+  *   description:  Conteneur managing API
   */
 
 /**
  * @swagger
- * /category:
+ * /conteneur:
  *   get:
- *     summary: Returns the list of all Category
- *     tags: [Category]
+ *     summary: Returns the list of all Conteneur
+ *     tags: [Conteneur]
  *     responses:
  *       200:
- *         description: The list of all category
+ *         description: The list of all conteneur
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Category'
+ *                 $ref: '#/components/schemas/Conteneur'
  */
 
-router.get("/category", getCategories);
+router.get("/conteneur", getConteneurs);
 
 /**
  * @swagger
- * /category/{uuid}:
+ * /conteneur/{uuid}:
  *   get:
- *     summary: Get the category by uuid
- *     tags: [Category]
+ *     summary: Get the conteneur by uuid
+ *     tags: [Conteneur]
  *     parameters:
  *       - in: path
  *         name: uuid
  *         schema:
  *           type: string
  *         required: true
- *         description: The category uuid
+ *         description: The conteneur uuid
  *     responses:
  *       200:
- *         description: The category description by uuid
+ *         description: The conteneur description by uuid
  *         contens:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Category'
+ *               $ref: '#/components/schemas/Conteneur'
  *       404:
- *         description: The category was not found
+ *         description: The conteneur was not found
  */
-router.get("/category/:uuid", getCategory);
+router.get("/conteneur/:uuid", getConteneur); //
 /**
  * @swagger
- * /category:
+ * /conteneur:
  *   post:
- *     summary: Create a new category
- *     tags: [Category]
+ *     summary: Create a new conteneur
+ *     tags: [Conteneur]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Category'
+ *             $ref: '#/components/schemas/Conteneur'
  *     responses:
  *       200:
- *         description: The Category was successfully created
+ *         description: The Conteneur was successfully created
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Category'
+ *               $ref: '#/components/schemas/Conteneur'
  *       500:
  *         description: Some server error
  */
-router.post("/category", createCategory);
+router.post("/conteneur", createConteneur);
 /**
  * @swagger
  * /categry/{uuid}:
  *  put:
  *    summary: Update the categry by the uuid
- *    tags: [Category]
+ *    tags: [Conteneur]
  *    parameters:
  *      - in: path
  *        name: uuid
@@ -135,28 +135,28 @@ router.post("/category", createCategory);
  *      500:
  *        description: Some error happened
  */
-router.put("/category/:uuid", updateCategory);
+router.put("/conteneur/:uuid", updateConteneur);
 
 /**
  * @swagger
- * /category/{uuid}:
+ * /conteneur/{uuid}:
  *   delete:
- *     summary: Remove the category by uuid
- *     tags: [Category]
+ *     summary: Remove the conteneur by uuid
+ *     tags: [Conteneur]
  *     parameters:
  *       - in: path
  *         name: uuid
  *         schema:
  *           type: string
  *         required: true
- *         description: The category uuid
+ *         description: The conteneur uuid
  * 
  *     responses:
  *       200:
- *         description: The category was deleted
+ *         description: The conteneur was deleted
  *       404:
- *         description: The category was not found
+ *         description: The conteneur was not found
  */
-router.put("/category/:uuid", deleteCategory);
+router.put("/conteneur/:uuid", deleteConteneur);
 
 export default router;
