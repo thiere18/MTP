@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
-import { Capital } from '../../entity/Capital';
+import { Magasin } from '../../entity/Magasin';
 // 
 export const createCapital = async (
     req: Request,
     res: Response
 ) => {
 try {
-  const newCapital = getRepository(Capital).create(req.body);
-  const results = await getRepository(Capital).save(newCapital);
+  const newCapital = getRepository(Magasin).create(req.body);
+  const results = await getRepository(Magasin).save(newCapital);
   return res.json(results);
 } catch (error) {
   console.log(error);
@@ -24,7 +24,7 @@ export const endpoint = async (req: Request, res: Response) => {
     res: Response
   ) => {
   try {
-    const capital = getRepository(Capital).find({isDeleted:false});
+    const capital = getRepository(Magasin).find({isDeleted:false});
     return res.status(200).json(capital);
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ export const endpoint = async (req: Request, res: Response) => {
     res: Response
   ) => {
 try {
-    const results = await getRepository(Capital).findOne({uuid: req.params.uuid,isDeleted:false});
+    const results = await getRepository(Magasin).findOne({uuid: req.params.uuid,isDeleted:false});
   return res.status(200).json(results);
 
 } catch (error) {
@@ -54,10 +54,10 @@ try {
     res: Response
   ) => {
 try {
-  const capital = await getRepository(Capital).findOne({ uuid: req.params.uuid });
+  const capital = await getRepository(Magasin).findOne({ uuid: req.params.uuid });
   if (capital) {
-    getRepository(Capital).merge(capital, req.body);
-    const results = await getRepository(Capital).save(capital);
+    getRepository(Magasin).merge(capital, req.body);
+    const results = await getRepository(Magasin).save(capital);
     return res.status(200).json(results);
   }
 
@@ -70,10 +70,10 @@ try {
   
   export const deleteCapital = async (req: Request, res: Response) => {
     try {
-        let result = await getRepository(Capital).findOne({ uuid: req.params.uuid });
+        let result = await getRepository(Magasin).findOne({ uuid: req.params.uuid });
         if (result) {
             result.isDeleted=true;
-            await Capital.save(result);
+            await Magasin.save(result);
         }
        
     return res.status(200).json(result);

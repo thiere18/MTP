@@ -136,7 +136,7 @@ router.post("/capital", createCapital);
  *        description: Some error happened
  */
 router.put("/capital/:uuid", updateCapital);
-
+ 
 /**
  * @swagger
  * /capital/{uuid}:
