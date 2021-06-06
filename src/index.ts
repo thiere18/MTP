@@ -9,6 +9,7 @@ import depotRoutes from './routes/depot.routes'
 import categoryRoutes from './routes/category.routes'
 import articleRoutes from './routes/article.routes'
 import capitalRoutes from './routes/capital.routes'
+import conteneurRoutes from './routes/conteneur.routes'
 const options = {
     definition: {
       openapi: "3.0.3",
@@ -47,6 +48,7 @@ app.use(depotRoutes);
 app.use(categoryRoutes)
 app.use(articleRoutes)
 app.use(capitalRoutes)
+app.use(conteneurRoutes)
 
 app.listen(4000);
 console.log(`Listening on port ${process.env.PORT}`);

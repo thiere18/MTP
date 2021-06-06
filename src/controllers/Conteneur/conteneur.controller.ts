@@ -8,8 +8,16 @@ export const createConteneur = async (
 ) => {
 try {
   const newContneur = getRepository(Conteneur).create(req.body);
+
   const results = await getRepository(Conteneur).save(newContneur);
+  console.log(req.body.reference)
+  const { reference, prix_transport, local_charge, dechargement, prix_achat, frais_voyage } = req.body
+  const sum = await (prix_achat + local_charge + dechargement + prix_transport + frais_voyage);
+  
+  console.log(sum)
   return res.json(results);
+  // const { prix_achat, prix_transport, local_charge, dechargement, frais_voyage } =results.Conteneur;
+
 } catch (error) {
   console.log(error);
   return res.status(500).json(error);

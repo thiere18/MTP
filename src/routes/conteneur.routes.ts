@@ -17,17 +17,41 @@ import {
  *     Conteneur:
  *       type: object
  *       required:
- *         - name
+ *         - reference
+ *         - prix_acht
+ *         - prix_transport
+ *         - frais_dedouanement
+ *         - local_charge
  *       properties:
  *         uuid:
  *           type: string
  *           description: The auto-generated uuid of the conteneur
- *         name:
+ *         reference:
  *           type: string
- *           description: The conteneur name
+ *           description: The conteneur reference
+ *         prix_achat:
+ *           type: number
+ *           description: prix achat conteneur
+ *         prix_transport:
+ *           type: number
+ *           description: prix transport conteneur
+ *         frais_dedouanement:
+ *           type: number
+ *           description: frais dedouanement conteneur
+ *         local_charge:
+ *           type: number
+ *           description: frais de dedouanement conteneur
+ *         frais_voyage: 
+ *           type: number
+ *           description: frqais de voyage 
  *       example:
- *         uuid: 4
- *         name: papier
+ *         reference: conteneur123033/ww
+ *         prix_acht: 20000000
+ *         prix_transport: 20000
+ *         frais_dedouanement: 2500
+ *         local_charge: 2345
+ *         frais_voyage: 12345
+ *         
  */
 
 
@@ -106,9 +130,9 @@ router.get("/conteneur/:uuid", getConteneur); //
 router.post("/conteneur", createConteneur);
 /**
  * @swagger
- * /categry/{uuid}:
+ * /conteneur/{uuid}:
  *  put:
- *    summary: Update the categry by the uuid
+ *    summary: Update the conteneur by the uuid
  *    tags: [Conteneur]
  *    parameters:
  *      - in: path
@@ -116,22 +140,22 @@ router.post("/conteneur", createConteneur);
  *        schema: 
  *          type: string
  *        required: true
- *        description: The categry uuid
+ *        description: The conteneur uuid
  *    requestBody:
  *      required: true
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/Categry'
+ *            $ref: '#/components/schemas/conteneur'
  *    responses:
  *      200:
- *        description: The categry was updated
+ *        description: The conteneur was updated
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/Categry'
+ *              $ref: '#/components/schemas/conteneur'
  *      404:
- *        description: The categry was not found
+ *        description: The conteneur was not found
  *      500:
  *        description: Some error happened
  */

@@ -5,6 +5,8 @@ import Model from './Model';
 export class Conteneur extends Model {
 
     @Column()
+    reference:string
+    @Column()
     prix_achat: number
     @Column()
     prix_transport: number
@@ -15,7 +17,7 @@ export class Conteneur extends Model {
     @Column()
     dechargement: number
     @Column()
-    frais_voyager: number
+    frais_voyage: number
 //     @OneToMany(() => Art_conteneur, art_conteneur => art_conteneur.conteneur)
 // public art_conteneurs!:Art_conteneur[];
 @OneToMany(() => Article, article => article.conteneur)

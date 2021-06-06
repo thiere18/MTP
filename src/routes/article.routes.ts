@@ -21,7 +21,7 @@ import {
  *         - name
  *         - prix_achat
  *         - prix_gros
- *         - prix_client 
+ *         - quantity_per_carton 
  *         - frais
  *         - prix_magasin
  *         - quantity_init
@@ -41,9 +41,9 @@ import {
  *         prix_gros: 
  *           type: number
  *           descripton: prix en gros de  l'article
- *         prix_client:
+ *         quantity_per_carton:
  *           type: number
- *           description: prix de vente pour client
+ *           description: quantite de carton
  *         quantity_init:
  *           type: number
  *           description: quantite initiale 
@@ -57,7 +57,6 @@ import {
  *           type: number
  *           description: uuid du article auquel l'article est rattache
  *       example:
- *         uuid: 4
  *         name: papier
  *         quantity_init: 234
  *         quantity_left: 23

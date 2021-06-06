@@ -26,7 +26,6 @@ import {
  *           type: string
  *           description: The depot name
  *       example:
- *         id: 4
  *         name: depot Dakar
  */
 

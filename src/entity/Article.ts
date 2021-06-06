@@ -1,7 +1,7 @@
 import {Entity, Column, ManyToOne, OneToMany, } from 'typeorm'
 import { ArticleGenerique } from './ArticleGenerique';
 import { Art_depot } from './Art_depot';
-import { Art_Facturation } from './Art_Facturation';
+// import { Art_Facturation } from './Art_Facturation';
 import { Art_Magasin } from './Art_Magasin';
 import { Category } from './Category';
 import { Conteneur } from './Conteneur';
@@ -37,8 +37,8 @@ public art_depots!: Art_depot[];
 @OneToMany(() => Art_Magasin, art_magasin => art_magasin.article)
 public art_magasins!: Art_Magasin[];
 
-@OneToMany(() => Art_Facturation, art_facturation => art_facturation.article)
-public art_facturations!: Art_Facturation[];
+// @OneToMany(() => Art_Facturation, art_facturation => art_facturation.article)
+// public art_facturations!: Art_Facturation[];
 
 
 }

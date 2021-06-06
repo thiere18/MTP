@@ -26,8 +26,7 @@ import {
  *           type: number
  *           description: The capital name
  *       example:
- *         uuid: 4
- *         name :5000
+ *         montant :5000
  */
 
 
